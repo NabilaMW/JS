@@ -26,7 +26,6 @@ function init(infos){
     bouton.innerHTML = 'Retrouvailles';
     bouton.onclick = dialogue;
 
-    //Ajout des classes sur paroles
     parole.className = 'center';
 
     //console.log([bouton])
@@ -59,6 +58,22 @@ function dialogue(){
     var contexte = document.getElementById('character_01');
     var paroles = data.perso_0.texte;
   }
+  if (index == 2 ){
+    var tabimage = data.perso_0 ;
+    var image = document.getElementById('character_01').getElementsByTagName('img')
+    image[0].src = tabimage.picture02
+
+  }
+  if (index == 2 ){
+    var tabimage = data.perso_1 ;
+    var image = document.getElementById('character_02').getElementsByTagName('img')
+    image[0].src = tabimage.picture03
+
+  }
+
+  console.log( contexte)
+  console.log( paroles)
+
   var dom = contexte.getElementsByClassName('center'); //--> Renvoie un tableau
   dom[0].innerHTML = paroles[ index%3 ];
   index++;
